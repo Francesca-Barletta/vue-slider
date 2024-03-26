@@ -19,6 +19,11 @@
                         <img :class="i === currentItem ? 'active' : 'item'" 
                             v-for="(item,i) in slides" 
                             :src="item.image" alt="">
+                        <div class="text"
+                        v-for="(item,i) in slides">
+                            <h3 :class="i === currentItem ? 'active' : 'item'" >{{item.title}}</h3>
+                            <p :class="i === currentItem ? 'active' : 'item'" >{{item.text}}</p>
+                        </div>
 
                     </div>
                     
@@ -38,10 +43,10 @@
                         <div @click="next()" class="next">&downarrow;</div>
 
                     </div>
-
+                    
 
                 </div>
-
+               
             
         </div>
     </div>
