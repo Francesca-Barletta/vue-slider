@@ -10,16 +10,28 @@
 </head>
 
 <body>
-    <div id="app">{{ message }}
+    <div id="app">
         <div class="container">
 
-            <div class="row">
+           
                 <div class="items-container">
-                    <div>
+                    <div class="big-img">
                         <img :class="i === currentItem ? 'active' : 'item'" 
                             v-for="(item,i) in slides" 
                             :src="item.image" alt="">
 
+                    </div>
+                    
+
+                    <div class="thumbs">
+                        <div :class="i === currentItem ? 'current' : 'view-off'"
+                            v-for="(item,i) in slides" >
+                                <img 
+                                class="thumb-img"
+                                :src="item.image" alt="">
+                        </div>
+                           
+                        
 
                         <div @click="prev()" class="prev">&UpArrow;</div>
 
@@ -30,7 +42,7 @@
 
                 </div>
 
-            </div>
+            
         </div>
     </div>
     <script>
