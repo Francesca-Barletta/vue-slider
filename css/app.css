@@ -5,7 +5,6 @@
 }
 .container{
     max-width: 90%;
-    height: 600px;
     margin: 100px auto;
     position:relative
 }
@@ -27,9 +26,11 @@ height: 100%;
     
 }
 img{
-  height: 100%;
-  width: 100%;
+  width: 80%;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  aspect-ratio: 21/9;
  
 }
 
@@ -37,7 +38,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 30px;
     aspect-ratio: 1 / 1;
     border-radius: 9999px;
     background-color: rgba(255, 255, 255, 0.448);
@@ -55,12 +56,18 @@ img{
 .prev{
     position: absolute;
     top: 15px;
-    left: 50%;
+    right: 50px;
     transform: translateX(-50%);
 }
 .next{
     position: absolute;
     bottom: 15px;
-    left: 50%;
+    right: 50px;
     transform: translateX(-50%);
+}
+thumbs{
+    width: 20%;
+    position: absolute;
+    right: 0;
+    display: block;
 }
