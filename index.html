@@ -8,15 +8,33 @@
     <title>Vue-slider</title>
 </head>
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">{{ message }}
     <div class="container">
         <div class="row">
             <div class="items-container">
+               
+                        <img
+                        :class="i === currentItem ? 'active' : 'item'"
+                        v-for="(item,i) in slides"
+                        :src="item.image" alt="">
+                    
+               <div
+                    @click="currentItem--"
+                    v-if="currentItem === 0"
+                    class="prev"
+                    >&UpArrow;
+                </div>
 
+               <div 
+                    @click="currentItem++"
+                    class="next" 
+                    >&downarrow;
+               </div>
+               
             </div>
-            <div class="prev">&UpArrow;</div>
-            <div class="next">&downarrow;</div>
+
         </div>
+    </div>
     </div>
     <script>
  
