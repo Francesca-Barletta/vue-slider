@@ -16,7 +16,11 @@
            
                 <div class="items-container">
                     <div class="big-img">
-                        <img :class="i === currentItem ? 'active' : 'item'" 
+                        <img 
+                            
+                            :class="i === currentItem ? 'active' : 'item'" 
+                            @mouseenter="stopInterval"
+                            @mouseleave="startInterval"
                             v-for="(item,i) in slides" 
                             :src="item.image" alt="">
                         <div class="text"
@@ -32,6 +36,7 @@
                         <div :class="i === currentItem ? 'current' : 'view-off'"
                             v-for="(item,i) in slides" >
                                 <img 
+                                @click="currentItem = i" 
                                 class="thumb-img"
                                 :src="item.image" alt="">
                         </div>
@@ -46,7 +51,9 @@
                     
 
                 </div>
-               
+               <div>
+                <button @click="changedirection">change direction</button>
+               </div>
             
         </div>
     </div>

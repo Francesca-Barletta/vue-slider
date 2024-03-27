@@ -60,12 +60,14 @@ img{
     top: 10px;
     right: 80px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 .next{
     position: absolute;
     bottom: 10px;
     right:80px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 .thumbs{
     position: absolute;

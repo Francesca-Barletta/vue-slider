@@ -8,6 +8,7 @@ createApp({
     return {
       message: 'Hello Vue!',
       currentItem: 0,
+      autoplay: null,
       slides: [
         {
           image: 'img/01.webp',
@@ -49,7 +50,32 @@ createApp({
         this.currentItem = this.slides.length;
       }
       this.currentItem--;
+    },
+    stopInterval(){
+      if(this.autoplay !== null)
+      clearInterval(this.autoplay)
+      this.autoplay = null
+    },
+    startInterval(){
+      this.autoplay = setInterval(this.changeslide,2000)
+    },
+    changedirection(){
+      if(this.direction === 1){
+        this.direction = -1
+      }else{
+        this.direction = 1
+      }
+    },
+    changeslide(){
+      if(this.direction === 1){
+        this.next()
+      }else{
+        this.prev()
+      }
     }
+  },
+  mounted(){
+    this.startInterval()
   }
 }).mount('#app')
 
